@@ -1,0 +1,13 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /hme
+
+spring:
+  application:
+    name: task-tracker
+
+    logging:
+      level:
+        root: INFO
+        org.springframework.web: debug
