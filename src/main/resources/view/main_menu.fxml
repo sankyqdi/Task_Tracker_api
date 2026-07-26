@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="740.0" prefWidth="1004.0" styleClass="main-background" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.MainMenuController">
+    <children>
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <left>
+                <VBox prefHeight="740.0" prefWidth="227.0" BorderPane.alignment="TOP_CENTER">
+                    <children>
+                        <ImageView fitHeight="132.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/menu/emblem.png" />
+                            </image>
+                        </ImageView>
+                        <StackPane maxWidth="1.7976931348623157E308" stylesheets="@../css/menu.css" VBox.vgrow="ALWAYS">
+                            <children>
+                                <ImageView accessibleRole="MENU_ITEM" fitHeight="439.0" fitWidth="202.0" opacity="0.59" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+                                    <image>
+                                        <Image url="@../image/menu/left_menu.png" />
+                                    </image>
+                                </ImageView>
+                                <VBox maxWidth="-Infinity" prefWidth="228.0" spacing="10.0" StackPane.alignment="TOP_RIGHT">
+                                    <children>
+                                        <Button contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="66.0" prefWidth="198.0" styleClass="left_menu-button" stylesheets="@../css/menu.css" text="DACHBOARD">
+                                            <graphic>
+                                                <ImageView fitHeight="46.0" fitWidth="68.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                    <cursor>
+                                                        <Cursor fx:constant="DEFAULT" />
+                                                    </cursor>
+                                                    <image>
+                                                        <Image url="@../image/menu/icons/icon_dashboard(white).png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="66.0" prefWidth="198.0" styleClass="left_menu-button" stylesheets="@../css/menu.css" text="PROJECT">
+                                            <graphic>
+                                                <ImageView fitHeight="63.0" fitWidth="70.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/menu/icons/icon_project.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="66.0" prefWidth="198.0" styleClass="left_menu-button" stylesheets="@../css/menu.css" text=" STATISTICS">
+                                            <graphic>
+                                                <ImageView fitHeight="59.0" fitWidth="68.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/menu/icons/icon_statics.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="66.0" prefWidth="198.0" styleClass="left_menu-button" stylesheets="@../css/menu.css" text=" SETTINGS">
+                                            <graphic>
+                                                <ImageView fitHeight="61.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/menu/icons/icon_settings.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                  <ImageView fitHeight="99.0" fitWidth="97.0" onMouseClicked="#handleBarsuckClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/menu/icons/icon_barsuk.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </VBox>
+            </left>
+            <center>
+                <VBox alignment="CENTER" fillWidth="false" spacing="20.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <StackPane fx:id="newTaskButton" maxHeight="70.0" maxWidth="220.0" onMouseClicked="#handleNewTaskClick" prefHeight="60.0" prefWidth="220.0" styleClass="main_menu-card" stylesheets="@../css/menu.css">
+                            <children>
+                                <ImageView fx:id="newTaskFrame" fitHeight="60.0" fitWidth="220.0" mouseTransparent="true" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../image/menu/frame_menu.png" />
+                                    </image>
+                                </ImageView>
+                                <HBox alignment="CENTER_RIGHT" mouseTransparent="true">
+                                    <children>
+                                        <VBox alignment="CENTER_LEFT" prefWidth="140.0">
+                                            <children>
+                                                <Label styleClass="main_menu-card-title" stylesheets="@../css/menu.css" text="NEW TASK" textFill="#eb0707" />
+                                                <Label styleClass="main_menu-card-subtitle" stylesheets="@../css/menu.css" text="Create a new Task" textFill="#eb1818">
+                                                    <font>
+                                                        <Font name="SimSun-ExtG" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <ImageView fitHeight="53.0" fitWidth="64.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                                    <image>
+                                        <Image url="@../image/menu/icons/icon_plus.png" />
+                                    </image>
+                                    <effect>
+                                        <Blend mode="RED" />
+                                    </effect>
+                                </ImageView>
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="showAllTasksButton" maxHeight="70.0" maxWidth="220.0" onContextMenuRequested="#handleShowTasksClick" prefHeight="60.0" prefWidth="220.0" styleClass="main_menu-card" stylesheets="@../css/menu.css">
+                            <children>
+                                <ImageView fx:id="showTasksFrame" fitHeight="60.0" fitWidth="216.0" mouseTransparent="true" nodeOrientation="INHERIT" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../image/menu/frame_menu.png" />
+                                    </image>
+                                </ImageView>
+                                <HBox alignment="CENTER_RIGHT" mouseTransparent="true">
+                                    <children>
+                                        <VBox prefWidth="140.0">
+                                            <children>
+                                                <Label styleClass="main_menu-card-title" stylesheets="@../css/menu.css" text="Show " textFill="#eb0707" />
+                                                <Label styleClass="main_menu-card-subtitle" stylesheets="@../css/menu.css" text="Show all tasks" textFill="#eb1818">
+                                                    <font>
+                                                        <Font name="SimSun-ExtG" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <ImageView fitHeight="46.0" fitWidth="73.0" mouseTransparent="true" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" styleClass="main_menu-card-icon" StackPane.alignment="CENTER_LEFT">
+                                    <image>
+                                        <Image url="@../image/menu/icons/icon_eye.png" />
+                                    </image>
+                                    <effect>
+                                        <Blend mode="RED" />
+                                    </effect>
+                                </ImageView>
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="exitButton" maxHeight="70.0" maxWidth="220.0" prefHeight="60.0" prefWidth="220.0" styleClass="main_menu-card" stylesheets="@../css/menu.css">
+                            <children>
+                                <ImageView fx:id="exitFrame" fitHeight="60.0" fitWidth="220.0" mouseTransparent="true" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../image/menu/frame_menu.png" />
+                                    </image>
+                                </ImageView>
+                                <HBox alignment="CENTER_RIGHT" mouseTransparent="true">
+                                    <children>
+                                        <VBox alignment="CENTER_LEFT" prefWidth="140.0">
+                                            <children>
+                                                <Label styleClass="main_menu-card-title" stylesheets="@../css/menu.css" text="Exit" textFill="#eb0707" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <ImageView fitHeight="46.0" fitWidth="68.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                                    <image>
+                                        <Image url="@../image/menu/icons/icon_exit.png" />
+                                    </image>
+                                    <effect>
+                                        <Blend mode="RED" />
+                                    </effect>
+                                </ImageView>
+                            </children>
+                        </StackPane>
+                    </children>
+                </VBox>
+            </center>
+            <right>
+                <VBox prefHeight="740.0" prefWidth="227.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="labelTime" alignment="BOTTOM_RIGHT" prefHeight="42.0" prefWidth="216.0" styleClass="cyber-clock-time" stylesheets="@../css/time.css" />
+                  <Label fx:id="labelDate" alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="203.0" styleClass="cyber-clock-date" stylesheets="@../css/time.css" />
+               </children></VBox>
+            </right>
+        </BorderPane>
+    </children>
+</AnchorPane>

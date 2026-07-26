@@ -1,0 +1,10 @@
+.main-background {
+
+    -fx-background-image: url("../image/menu/main_menu.png");
+
+
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+

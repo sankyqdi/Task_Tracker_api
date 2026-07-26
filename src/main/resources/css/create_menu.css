@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Permanent Marker';
+    src: url('../fonts/Teenidle.ttf');
+}
+
+/*Фон окна*/
+.create-background {
+
+    -fx-background-image: url("../image/create/background.png");
+
+
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+}
+
+/*Фон кнопок и стиль текста*/
+.create-button-background {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../image/create/background_button.png");
+
+
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Teenidle";
+
+    -fx-display-caret: true;
+    -fx-caret-color: #ffffff;
+
+    -fx-margin: 20px;
+
+}
+
+/*Подсказка в кнопках*/
+.create-button-background:focused {
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+.create-button-background {
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+/*  Главная кнопка ComboBox */
+.create-combo-background {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../image/create/background_button.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-font-family: "Teenidle";
+    -fx-margin: 20px;
+}
+
+/*  Текст внутри выбранного элемента */
+.create-combo-background .cell {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: transparent;
+    -fx-font-family: "Teenidle";
+}
+
+/* Текст-подсказка */
+.create-combo-background .list-cell:empty {
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+/*  Кнопка со стрелочкой справа  */
+.create-combo-background .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.create-combo-background .arrow {
+    -fx-background-color: #ffffff;
+}
+
+/* 5. Выпадающий список (Popup Menu) */
+.create-combo-background .combo-box-popup .list-view {
+    -fx-background-color: #1a1a1a;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0, 0, 4);
+}
+
+/* Элементы внутри выпадающего списка */
+.create-combo-background .combo-box-popup .list-cell {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Teenidle";
+    -fx-background-color: transparent;
+    -fx-padding: 8px 12px;
+}
+
+/* Подсветка элемента при наведении мыши в выпадающем списке */
+.create-combo-background .combo-box-popup .list-cell:hover {
+    -fx-background-color: #e61c24;
+    -fx-text-fill: #ffffff;
+}
+
+/* Кнопка создания задачи*/
+.button-click-create {
+
+    -fx-background-color: transparent;
+    -fx-background-image: url("../image/create/icon/icon_create_button.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+
+}
+
+/*Эффект кнопки при наведении */
+.button-click-create:hover {
+
+    -fx-background-image:
+        radial-gradient(center 50% 50%, radius 35%, rgba(255, 34, 34, 0.8) 0%, transparent 100%),
+        url("../image/create/icon/icon_create_button.png");
+
+    -fx-background-size: 40% 100%, contain;
+    -fx-background-position: center, center;
+    -fx-background-repeat: no-repeat, no-repeat;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+    -fx-effect: null;
+
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+
+}
+
+/*Эффект кнопки при нажатии */
+.button-click-create:pressed {
+
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+    -fx-translate-y: 5px;
+
+    -fx-background-image:
+        radial-gradient(center 50% 50%, radius 35%, rgba(200, 20, 20, 0.9) 0%, transparent 100%),
+        url("../image/create/icon/icon_create_button.png");
+
+    -fx-background-size: 40% 100%, contain;
+    -fx-background-position: center, center;
+    -fx-background-repeat: no-repeat, no-repeat;
+
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.6), 6, 0.3, 0, 2);
+}

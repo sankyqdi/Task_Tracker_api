@@ -1,6 +1,7 @@
 package app;
 
-import org.springframework.boot.SpringApplication;
+import javafx.application.Application;
+import javafx.scene.text.Font;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(Main.class, args);
+        Font.loadFont(Main.class.getResourceAsStream("/fonts/PermanentMarker-Regular.ttf"), 14);
+        Application.launch(JavaFxApplication.class, args);
 
     }
 }

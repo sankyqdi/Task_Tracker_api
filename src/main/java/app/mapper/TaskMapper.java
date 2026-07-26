@@ -4,10 +4,7 @@ import app.dto.TaskCreatedDTO;
 import app.dto.TaskDTO;
 import app.dto.TaskUpdateDTO;
 import app.model.Task;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 @Mapper(uses = JsonNullableMapper.class,
         componentModel = "spring",
@@ -20,7 +17,8 @@ public interface TaskMapper {
 
     Task map(TaskCreatedDTO taskCreatedDTO);
 
-    TaskDTO update(TaskUpdateDTO taskUpdateDTO, @MappingTarget Task model);
+    @Mapping(target = "builtInTags", ignore = true)
+    void update(TaskUpdateDTO taskUpdateDTO, @MappingTarget Task model);
 
 
 }

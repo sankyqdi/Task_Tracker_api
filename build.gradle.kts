@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 group = "com.example"
@@ -12,6 +13,11 @@ repositories {
     maven { url = uri("https://spring.io") }
 }
 
+javafx {
+    version = "21"
+    modules = listOf("javafx.controls", "javafx.fxml")
+}
+
 dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -20,6 +26,8 @@ dependencies {
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
     implementation ("org.mapstruct:mapstruct:1.6.3")
     implementation("org.openapitools:jackson-databind-nullable:0.2.6")
+
+    runtimeOnly ("org.postgresql:postgresql")
 
     runtimeOnly("com.h2database:h2")
     compileOnly("org.projectlombok:lombok")

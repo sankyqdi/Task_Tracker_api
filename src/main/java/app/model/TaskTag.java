@@ -2,6 +2,9 @@ package app.model;
 
 import lombok.Getter;
 
+import java.util.stream.Stream;
+import java.util.List;
+
 @Getter
 public enum TaskTag {
     BUG("Bug", "🐛"),
@@ -27,6 +30,14 @@ public enum TaskTag {
     TaskTag(String displayName, String emoji) {
         this.displayName = displayName;
         this.emoji = emoji;
+    }
+
+    public static List<String> getAllTag() {
+
+        return Stream.of(TaskTag.values())
+                .map(TaskTag::getFormattedTag)
+                .toList();
+
     }
 
     public String getFormattedTag() {

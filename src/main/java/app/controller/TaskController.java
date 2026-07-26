@@ -3,15 +3,16 @@ package app.controller;
 import app.dto.TaskCreatedDTO;
 import app.dto.TaskDTO;
 import app.dto.TaskParamsDTO;
+import app.dto.TaskUpdateDTO;
 import app.service.TaskService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -21,11 +22,10 @@ public class TaskController {
     private final TaskService taskService;
 
     @GetMapping
-    public ResponseEntity<List<TaskDTO>> index(TaskParamsDTO params) {
+    public ResponseEntity<Page<TaskDTO>> index(TaskParamsDTO params, Pageable pageable) {
 
-        List<TaskDTO> tasks = taskService.getAll(params);
+        Page<TaskDTO> tasks = taskService.getAll(params, pageable);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-Total-Count", String.valueOf(tasks.size()));
 
         return ResponseEntity.ok()
                 .headers(headers)
@@ -45,6 +45,14 @@ public class TaskController {
     public TaskDTO create(@Valid @RequestBody TaskCreatedDTO dto) {
 
         return taskService.create(dto);
+
+    }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public TaskDTO update(@Valid @RequestBody TaskUpdateDTO dto, @PathVariable Long id) {
+
+        return taskService.update(id, dto);
 
     }
 

@@ -11,6 +11,8 @@ import app.repository.TaskRepository;
 import app.specification.TaskSpecification;
 import lombok.AllArgsConstructor;
 import org.openapitools.jackson.nullable.JsonNullable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -31,13 +33,11 @@ public class TaskService implements TaskServiceInterface {
     private final TaskMapper taskMapper;
 
     @Transactional(readOnly = true)
-    public List<TaskDTO> getAll(TaskParamsDTO params) {
+    public Page<TaskDTO> getAll(TaskParamsDTO params, Pageable pageable) {
 
         Specification<Task> spec = taskSpecification.build(params);
-        return taskRepository.findAll(spec)
-                .stream()
-                .map(taskMapper::map)
-                .toList();
+        return taskRepository.findAll(spec, pageable)
+                .map(taskMapper::map);
     }
 
 
@@ -52,6 +52,7 @@ public class TaskService implements TaskServiceInterface {
 
     }
 
+    @Transactional(readOnly = true)
     public TaskDTO create(TaskCreatedDTO taskCreatedDTO) {
 
         Task task = taskMapper.map(taskCreatedDTO);
@@ -63,6 +64,7 @@ public class TaskService implements TaskServiceInterface {
 
     }
 
+    @Transactional(readOnly = true)
     public TaskDTO update(Long id, TaskUpdateDTO taskUpdateDTO) {
 
         Task task = taskRepository.findById(id)
@@ -82,6 +84,7 @@ public class TaskService implements TaskServiceInterface {
 
     }
 
+    @Transactional(readOnly = true)
     public void delete(Long id) {
 
         taskRepository.findById(id)
@@ -120,31 +123,6 @@ public class TaskService implements TaskServiceInterface {
                                        JsonNullable<LocalDate> dueDateNullable,
                                        JsonNullable<Boolean> isCompletedNullable,
                                        JsonNullable<Set<String>> builtTagsNullable) {
-
-
-        if (nameNullable != null && nameNullable.isPresent()) {
-
-            task.setName(nameNullable.get());
-
-        }
-
-        if (bodyNullable != null && bodyNullable.isPresent()) {
-
-            task.setBody(bodyNullable.get());
-
-        }
-
-        if (stageNullable != null && stageNullable.isPresent()) {
-            task.setStage(stageNullable.get());
-        }
-
-        if (dueDateNullable != null && dueDateNullable.isPresent()) {
-            task.setDueDate(dueDateNullable.get());
-        }
-
-        if (isCompletedNullable != null && isCompletedNullable.isPresent()) {
-            task.setCompleted(isCompletedNullable.get());
-        }
 
         if (builtTagsNullable != null && builtTagsNullable.isPresent()) {
 

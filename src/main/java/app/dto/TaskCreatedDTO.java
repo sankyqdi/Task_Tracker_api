@@ -2,6 +2,7 @@ package app.dto;
 
 
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class TaskCreatedDTO {
 
         @NotBlank
@@ -30,5 +32,6 @@ public class TaskCreatedDTO {
         @NotNull
         @NotEmpty
         private Set<@NotBlank String> tags;
+
 
 }

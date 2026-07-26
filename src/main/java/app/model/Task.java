@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 
 import java.time.LocalDate;
@@ -18,7 +20,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table
+@Table(name = "task")
 public class Task {
 
     @Id
@@ -40,9 +42,11 @@ public class Task {
     @NotNull
     private String stage = "Created";
 
-    @Column(name = "created_at")
-    private LocalDate createdAt = LocalDate.now();
+    @Column(name = "created_at", updatable = false)
+    @CreationTimestamp
+    private LocalDate createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDate updatedAt = LocalDate.now();
 

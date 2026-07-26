@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="531.0" prefWidth="600.0" styleClass="create-background" stylesheets="@../css/create_menu.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.TaskUIController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="456.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                    <children>
+                  <VBox alignment="CENTER" layoutX="199.0" layoutY="75.0" prefHeight="263.0" prefWidth="209.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="75.0">
+                     <children>
+                              <TextField fx:id="nameInput" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" styleClass="create-button-background" stylesheets="@../css/create_menu.css" translateY="-40.0" />
+                              <TextField fx:id="bodyInput" alignment="CENTER" prefHeight="25.0" prefWidth="145.0" styleClass="create-button-background" stylesheets="@../css/create_menu.css" translateY="-30.0" />
+                              <TextField fx:id="levelInput" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" styleClass="create-button-background" translateY="-20.0" />
+                              <TextField fx:id="dueDateInput" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" styleClass="create-button-background" translateY="-10.0" />
+                              <ComboBox fx:id="tagComboBox" prefHeight="45.0" prefWidth="211.0" styleClass="create-combo-background" translateY="-10.0" />
+                              <Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddTask" prefHeight="70.0" prefWidth="138.0" styleClass="button-click-create" />
+                     </children>
+                  </VBox>
+                    </children>
+                </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
