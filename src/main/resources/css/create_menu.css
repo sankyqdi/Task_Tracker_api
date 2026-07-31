@@ -17,21 +17,23 @@
 
 /*Фон кнопок и стиль текста*/
 .create-button-background {
+
     -fx-background-color: transparent;
-    -fx-background-image: url("../image/create/background_button.png");
+     -fx-background-image: url("../image/create/background_button.gif");
+
+     -fx-background-size: 100% 100%;
+     -fx-background-position: center;
+     -fx-background-repeat: no-repeat;
 
 
-    -fx-background-size: 100%;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
+    -fx-padding: 5px 15px 5px 15px;
 
-    -fx-text-fill: #ffffff;
-    -fx-font-family: "Teenidle";
+     -fx-text-fill: #ffffff;
+     -fx-font-family: "Teenidle";
+     -fx-font-size: 10px;
 
-    -fx-display-caret: true;
-    -fx-caret-color: #ffffff;
-
-    -fx-margin: 20px;
+     -fx-display-caret: true;
+     -fx-caret-color: #ffffff
 
 }
 
@@ -42,6 +44,10 @@
 
 .create-button-background {
     -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+.create-button-background > .prompt-text {
+    -fx-font-size: 6px;
 }
 
 /*  Главная кнопка ComboBox */

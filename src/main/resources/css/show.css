@@ -1,0 +1,103 @@
+.show-background {
+
+    -fx-background-image: url("../image/show/background.png");
+
+
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+}
+
+/*Фон списка*/
+.show-list-background {
+
+    -fx-background-image: url("../image/show/list_background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center-right;
+    -fx-background-repeat: no-repeat;
+}
+
+.show-list-background .list-cell {
+    /* Полупрозрачный плашечный фон */
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+
+    /* Скругление углов ячейки */
+    -fx-background-radius: 8px;
+
+    /* Внешний отступ между ячейками (чтобы плашки не слипались) */
+    -fx-background-insets: 4px 8px;
+
+    -fx-padding: 10px;
+    -fx-text-fill: #ffffff;
+}
+
+.scroll-pane,
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .scroll-bar:vertical .thumb {
+
+    -fx-background-image: url("../image/show/icon/icon_slider.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+}
+
+.scroll-pane > .scroll-bar:vertical .track {
+
+    -fx-background-image: url("../image/show/icon/icon_background_slider.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-insets: 0;
+
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+    -fx-padding: 0;
+
+}
+
+.scroll-pane > .scroll-bar:vertical .increment-button {
+    -fx-background-image: url("../image/show/icon/icon_arrow_bottom.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+    -fx-padding: 0;
+
+}
+
+.scroll-pane > .scroll-bar:vertical .increment-button > .increment-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+.scroll-pane > .scroll-bar:vertical .decrement-button {
+    -fx-background-image: url("../image/show/icon/icon_arrow_top.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+}
+
+.scroll-pane > .scroll-bar:vertical .decrement-button > .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+.scroll-pane > .scroll-bar:vertical .increment-button:hover,
+.scroll-pane > .scroll-bar:vertical .decrement-button:hover {
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
+.scroll-pane > .scroll-bar:vertical .increment-button:pressed,
+.scroll-pane > .scroll-bar:vertical .decrement-button:pressed {
+    -fx-opacity: 0.5;
+    -fx-translate-y: 1px;
+}

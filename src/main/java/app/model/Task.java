@@ -29,7 +29,7 @@ public class Task {
 
     @NotNull
     @Size(max = 70)
-    @Column( length = 70)
+    @Column(length = 70)
     private String name;
 
     @NotNull

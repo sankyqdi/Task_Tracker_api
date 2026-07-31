@@ -19,8 +19,6 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 @Component
@@ -32,8 +30,9 @@ public class MainMenuController {
     private static final double DEFAULT_BUTTON_WIDTH = 220.0;
     private static final double DEFAULT_BUTTON_HEIGHT = 60.0;
 
+    private static final int REQUIRED_CLICKS = 5;
     private int clickCount = 0;
-    private Timer resetTimer;
+    private PauseTransition resetDelay;
 
     @FXML
     private AnchorPane rootPane;
@@ -82,6 +81,9 @@ public class MainMenuController {
         }
 
         setTimeAndDate();
+
+        resetDelay = new PauseTransition(Duration.millis(1500));
+        resetDelay.setOnFinished(e -> clickCount = 0);
     }
 
     private void setTimeAndDate() {
@@ -116,34 +118,15 @@ public class MainMenuController {
 
     @FXML
     public void handleBarsuckClick() {
-
-        int REQUIRED_CLICKS = 5;
-
         clickCount++;
 
-        if (resetTimer != null) {
-
-            resetTimer.cancel();
-
-        }
-
+        resetDelay.playFromStart();
 
         if (clickCount >= REQUIRED_CLICKS) {
-
+            resetDelay.stop();
             clickCount = 0;
             barsukHell();
-            return;
-
         }
-
-        resetTimer = new Timer();
-        resetTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                clickCount = 0;
-            }
-        }, 1500);
-
     }
 
     private void barsukHell() {

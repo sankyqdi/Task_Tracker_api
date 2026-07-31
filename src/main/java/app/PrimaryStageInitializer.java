@@ -1,9 +1,11 @@
 package app;
 
+import app.config.WindowManager;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
@@ -11,15 +13,17 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
+@RequiredArgsConstructor
 public class PrimaryStageInitializer implements ApplicationListener<StageReadyEvent> {
 
-
+    private final WindowManager windowManager;
 
     @Override
     public void onApplicationEvent(StageReadyEvent event) {
 
         try {
             Stage stage = event.getStage();
+            windowManager.setPrimaryStage(stage);
             ConfigurableApplicationContext context = event.getApplicationContext();
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main_menu.fxml"));

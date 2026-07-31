@@ -118,7 +118,7 @@
                                 </ImageView>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="showAllTasksButton" maxHeight="70.0" maxWidth="220.0" onContextMenuRequested="#handleShowTasksClick" prefHeight="60.0" prefWidth="220.0" styleClass="main_menu-card" stylesheets="@../css/menu.css">
+                        <StackPane fx:id="showAllTasksButton" maxHeight="70.0" maxWidth="220.0" onMouseClicked="#handleShowTasksClick" prefHeight="60.0" prefWidth="220.0" styleClass="main_menu-card" stylesheets="@../css/menu.css">
                             <children>
                                 <ImageView fx:id="showTasksFrame" fitHeight="60.0" fitWidth="216.0" mouseTransparent="true" nodeOrientation="INHERIT" pickOnBounds="true">
                                     <image>

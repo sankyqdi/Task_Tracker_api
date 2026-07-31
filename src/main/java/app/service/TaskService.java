@@ -32,7 +32,7 @@ public class TaskService implements TaskServiceInterface {
     private final TaskSpecification taskSpecification;
     private final TaskMapper taskMapper;
 
-    @Transactional(readOnly = true)
+    @Transactional
     public Page<TaskDTO> getAll(TaskParamsDTO params, Pageable pageable) {
 
         Specification<Task> spec = taskSpecification.build(params);
@@ -52,7 +52,7 @@ public class TaskService implements TaskServiceInterface {
 
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public TaskDTO create(TaskCreatedDTO taskCreatedDTO) {
 
         Task task = taskMapper.map(taskCreatedDTO);
@@ -64,7 +64,7 @@ public class TaskService implements TaskServiceInterface {
 
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public TaskDTO update(Long id, TaskUpdateDTO taskUpdateDTO) {
 
         Task task = taskRepository.findById(id)
@@ -138,5 +138,11 @@ public class TaskService implements TaskServiceInterface {
                 enrichTaskTag(task, newTag);
             }
         }
+    }
+
+    public long getTaskCount() {
+
+        return taskRepository.count();
+
     }
 }

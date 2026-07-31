@@ -15,6 +15,8 @@ public interface TaskMapper {
 
     TaskDTO map(Task task);
 
+    @Mapping(target = "builtInTags", ignore = true)
+    @Mapping(target = "customTags", ignore = true)
     Task map(TaskCreatedDTO taskCreatedDTO);
 
     @Mapping(target = "builtInTags", ignore = true)

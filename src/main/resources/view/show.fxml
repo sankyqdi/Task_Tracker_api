@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.controller.ShowTasksController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="show-background" stylesheets="@../css/show.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="51.0" prefHeight="300.0" prefWidth="276.0">
+         <children>
+            <ImageView fitHeight="315.0" fitWidth="240.0" layoutX="-2.0" nodeOrientation="INHERIT" opacity="0.71" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../image/show/list_background.png" />
+               </image>
+               <effect>
+                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="32.41" surfaceScale="4.14">
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="300.0" prefWidth="240.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <VBox fx:id="listTasks" maxHeight="-Infinity" prefHeight="300.0" prefWidth="240.0" />
+               </content>
+            </ScrollPane>
+         </children>
+         <effect>
+            <Blend mode="SRC_ATOP" />
+         </effect>
+      </AnchorPane>
+   </children>
 </AnchorPane>

@@ -1,0 +1,57 @@
+
+
+.button_background_easy {
+
+    -fx-background-color:transparent;
+
+    -fx-background-image: url("../image/show/button_level_easy.png");
+
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-position: center;
+
+    -fx-background-size: contain;
+
+}
+
+.button_background_normal {
+
+    -fx-background-color:transparent;
+
+    -fx-background-image: url("../image/show/button_level_normal.png");
+
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-position: center;
+
+    -fx-background-size: contain;
+
+}
+
+.button_background_hard {
+
+    -fx-background-color:transparent;
+
+    -fx-background-image: url("../image/show/button_level_hard.png");
+
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-position: center;
+
+    -fx-background-size: contain;
+
+}
+
+.button_background_very_hard {
+
+    -fx-background-color:transparent;
+
+    -fx-background-image: url("../image/show/button_level_very_hard.png");
+
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-position: center;
+
+    -fx-background-size: contain;
+
+}
