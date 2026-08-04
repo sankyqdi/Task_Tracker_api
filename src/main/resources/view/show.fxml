@@ -1,39 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="show-background" stylesheets="@../css/show.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane layoutX="22.0" layoutY="51.0" prefHeight="300.0" prefWidth="276.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="show-background" stylesheets="@../css/show.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.ShowTasksController">
+    <children>
+        <AnchorPane layoutX="3.0" layoutY="45.0" prefHeight="300.0" prefWidth="276.0">
+            <children>
+                <ImageView fitHeight="315.0" fitWidth="240.0" layoutX="-2.0" nodeOrientation="INHERIT" opacity="0.71" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="0.0">
+                    <image>
+                        <Image url="@../image/show/list_background.png" />
+                    </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </ImageView>
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="300.0" prefWidth="240.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                        <VBox fx:id="listTasks" maxHeight="-Infinity" prefHeight="300.0" prefWidth="240.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+            <effect>
+                <Blend mode="SRC_ATOP" />
+            </effect>
+        </AnchorPane>
+      <AnchorPane layoutX="361.0" layoutY="3.0" prefHeight="364.0" prefWidth="237.0" styleClass="panel" stylesheets="@../css/show_panel.css">
          <children>
-            <ImageView fitHeight="315.0" fitWidth="240.0" layoutX="-2.0" nodeOrientation="INHERIT" opacity="0.71" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="0.0">
-               <image>
-                  <Image url="@../image/show/list_background.png" />
-               </image>
-               <effect>
-                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="32.41" surfaceScale="4.14">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect>
-            </ImageView>
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="300.0" prefWidth="240.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="0.0">
+            <Label fx:id="nameTask" layoutX="19.0" layoutY="73.0" prefHeight="32.0" prefWidth="115.0" text="Label" />
+            <ScrollPane layoutX="151.0" layoutY="70.0" prefHeight="168.0" prefWidth="88.0">
                <content>
-                  <VBox fx:id="listTasks" maxHeight="-Infinity" prefHeight="300.0" prefWidth="240.0" />
+                  <VBox fx:id="tagTask" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="75.0" />
                </content>
             </ScrollPane>
+            <Button layoutX="20.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleExecution" prefHeight="48.0" prefWidth="41.0" text="Button" />
+            <Button layoutX="81.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="33.0" prefWidth="74.0" text="Button" />
+            <Button layoutX="174.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="42.0" prefWidth="45.0" text="Button" />
+            <AnchorPane layoutX="23.0" layoutY="261.0" prefHeight="20.0" prefWidth="180.0" styleClass="progress_track" stylesheets="@../css/show_panel.css">
+               <children>
+                  <Region fx:id="stageTask" layoutX="21.0" layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="13.0" prefWidth="140.0" styleClass="progress_bar" stylesheets="@../css/show_panel.css">
+                     <effect>
+                        <ColorAdjust brightness="0.19" contrast="-0.16" hue="-0.26" saturation="0.01" />
+                     </effect>
+                  </Region>
+               </children>
+               <effect>
+                  <ColorAdjust brightness="-0.42" contrast="0.24" hue="-0.05" saturation="0.61" />
+               </effect>
+            </AnchorPane>
+            <Label fx:id="textBodyTask" layoutX="22.0" layoutY="162.0" prefHeight="72.0" prefWidth="110.0" text="Label" />
+            <Label fx:id="dueDateTask" layoutX="3.0" layoutY="6.0" prefHeight="20.0" prefWidth="65.0" text="Label" />
+         </children></AnchorPane>
+      <StackPane layoutX="500.0" layoutY="360.0" onMouseClicked="#handleExitMainMenu" prefHeight="40.0" prefWidth="99.0" styleClass="exit_butter" stylesheets="@../css/show_panel.css">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="62.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/show/icon/icon_exit_main_menu.png" />
+               </image>
+            </ImageView>
          </children>
-         <effect>
-            <Blend mode="SRC_ATOP" />
-         </effect>
-      </AnchorPane>
-   </children>
+      </StackPane>
+    </children>
 </AnchorPane>

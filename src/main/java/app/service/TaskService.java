@@ -5,6 +5,7 @@ import app.dto.TaskDTO;
 import app.dto.TaskParamsDTO;
 import app.dto.TaskUpdateDTO;
 import app.mapper.TaskMapper;
+import app.model.Stage;
 import app.model.Task;
 import app.model.TaskTag;
 import app.repository.TaskRepository;
@@ -56,7 +57,7 @@ public class TaskService implements TaskServiceInterface {
     public TaskDTO create(TaskCreatedDTO taskCreatedDTO) {
 
         Task task = taskMapper.map(taskCreatedDTO);
-        enrichTaskTag(task, taskCreatedDTO.getTags());
+        enrichTaskTags(task, taskCreatedDTO.getTags());
 
         taskRepository.save(task);
 
@@ -74,17 +75,31 @@ public class TaskService implements TaskServiceInterface {
 
         taskMapper.update(taskUpdateDTO, task);
 
-        enrichTaskJsonNullable(task, taskUpdateDTO.getName(),
-                taskUpdateDTO.getBody(), taskUpdateDTO.getStage(),
-                taskUpdateDTO.getDueDate(), taskUpdateDTO.getIsCompleted(),
-                taskUpdateDTO.getBuiltInTags());
+        taskMapper.update(taskUpdateDTO, task);
+
+        if (taskUpdateDTO.getBuiltInTags() != null && taskUpdateDTO.getBuiltInTags().isPresent()) {
+
+            Set<String> newTags = taskUpdateDTO.getBuiltInTags().get();
+
+            if (newTags == null) {
+
+                task.getBuiltInTags().clear();
+                task.getCustomTags().clear();
+
+            } else {
+
+                enrichTaskTags(task, newTags);
+
+            }
+        }
+
         taskRepository.save(task);
 
         return taskMapper.map(task);
 
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Long id) {
 
         taskRepository.findById(id)
@@ -96,7 +111,7 @@ public class TaskService implements TaskServiceInterface {
 
     }
 
-    public void enrichTaskTag(Task task, Set<String> tags) {
+    public void enrichTaskTags(Task task, Set<String> tags) {
 
         if (tags != null) {
 
@@ -116,29 +131,29 @@ public class TaskService implements TaskServiceInterface {
         }
     }
 
-    public void enrichTaskJsonNullable(Task task,
-                                       JsonNullable<String> nameNullable,
-                                       JsonNullable<String> bodyNullable,
-                                       JsonNullable<String> stageNullable,
-                                       JsonNullable<LocalDate> dueDateNullable,
-                                       JsonNullable<Boolean> isCompletedNullable,
-                                       JsonNullable<Set<String>> builtTagsNullable) {
-
-        if (builtTagsNullable != null && builtTagsNullable.isPresent()) {
-
-            Set<String> newTag = builtTagsNullable.get();
-
-            if (newTag == null) {
-
-                task.getBuiltInTags().clear();
-                task.getCustomTags().clear();
-
-            } else {
-
-                enrichTaskTag(task, newTag);
-            }
-        }
-    }
+//    public void enrichTaskJsonNullable(Task task,
+//                                       JsonNullable<String> nameNullable,
+//                                       JsonNullable<String> bodyNullable,
+//                                       JsonNullable<Stage> stageNullable,
+//                                       JsonNullable<LocalDate> dueDateNullable,
+//                                       JsonNullable<Boolean> isCompletedNullable,
+//                                       JsonNullable<Set<String>> builtTagsNullable) {
+//
+//        if (builtTagsNullable != null && builtTagsNullable.isPresent()) {
+//
+//            Set<String> newTag = builtTagsNullable.get();
+//
+//            if (newTag == null) {
+//
+//                task.getBuiltInTags().clear();
+//                task.getCustomTags().clear();
+//
+//            } else {
+//
+//                enrichTaskTag(task, newTag);
+//            }
+//        }
+//    }
 
     public long getTaskCount() {
 

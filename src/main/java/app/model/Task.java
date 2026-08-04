@@ -40,7 +40,7 @@ public class Task {
     private byte importanceLevel;
 
     @NotNull
-    private String stage = "Created";
+    private Stage stage = Stage.CREATED;
 
     @Column(name = "created_at", updatable = false)
     @CreationTimestamp

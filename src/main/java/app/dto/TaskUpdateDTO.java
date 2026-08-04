@@ -1,5 +1,6 @@
 package app.dto;
 
+import app.model.Stage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -15,7 +16,7 @@ public class TaskUpdateDTO {
 
     private JsonNullable<String> body = JsonNullable.undefined();
 
-    private JsonNullable<String> stage = JsonNullable.undefined();
+    private JsonNullable<Stage> stage = JsonNullable.undefined();
 
     private JsonNullable<LocalDate> dueDate = JsonNullable.undefined();
 

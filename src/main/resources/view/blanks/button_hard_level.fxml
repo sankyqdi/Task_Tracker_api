@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
 <StackPane maxHeight="35.0" maxWidth="238.0" minHeight="35.0" minWidth="238.0" prefHeight="35.0" prefWidth="238.0" styleClass="button_background_hard" stylesheets="@../../css/button_levels.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="157.0" spacing="20.0">
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="228.0" spacing="20.0">
             <children>
-                <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="105.0" style="-fx-alignment: center;" textAlignment="CENTER" />
-                <Label prefHeight="34.0" prefWidth="25.0" style="-fx-alignment: center;" />
+                <Label fx:id="nameTask" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="161.0" styleClass="button_level_label" text="jghgghgh" textAlignment="CENTER" />
+                <Label fx:id="levelTask" prefHeight="34.0" prefWidth="42.0" text="9">
+               <styleClass>
+                  <String fx:value="number" />
+                  <String fx:value="button_level_label" />
+               </styleClass></Label>
             </children>
         </HBox>
     </children>

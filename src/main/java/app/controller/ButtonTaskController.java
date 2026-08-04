@@ -1,15 +1,13 @@
 package app.controller;
 
 import app.dto.TaskDTO;
+import app.utils.LoadFXML;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
 
 @Component
 @Scope("prototype")
@@ -29,11 +27,12 @@ public class ButtonTaskController {
 
     public Node setStackPane (TaskDTO task) {
 
-        Node stackPane = loadFxmlBlank(getPathFxml(task));
+        Node stackPane = LoadFXML.loadFxmlBlank(getPathFxml(task), this);
 
         if (stackPane != null) {
 
             setTask(task);
+            stackPane.setUserData(task);
 
         }
 
@@ -61,20 +60,20 @@ public class ButtonTaskController {
 
     }
 
-    private Node loadFxmlBlank(String pathFxml) {
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(pathFxml));
-
-            loader.setController(this);
-
-            return loader.load();
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-            return null;
-
-        }
-    }
+//    private Node loadFxmlBlank(String pathFxml) {
+//
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource(pathFxml));
+//
+//            loader.setController(this);
+//
+//            return loader.load();
+//
+//        } catch (IOException e) {
+//
+//            e.printStackTrace();
+//            return null;
+//
+//        }
+//    }
 }

@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Permanent Marker';
+    src: url('../fonts/Teenidle.ttf');
+}
+
+.panel {
+
+    -fx-background-image: url("../image/show/panel_show_task.png");
+
+
+        -fx-background-size: cover;
+        -fx-background-position: center;
+        -fx-background-repeat: no-repeat;
+
+}
+
+/*Место для body*/
+.text_area,
+.text_area .scroll-pane,
+.text_area .content {
+
+    -fx-background-color: transparent;
+
+}
+
+
+.progress_track {
+
+    -fx-background-image: url("../image/show/icon/icon_progress_bar.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+
+}
+
+.progress_bar {
+
+    -fx-background-image: url("../image/show/icon/icon_progress_hot_bar.png");
+    -fx-background-position: center;
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+
+}
+
+.exit_butter {
+
+    -fx-background-color: transparent;
+
+}
+
+.tags_item {
+
+    -fx-background-image: url("../image/show/icon/icon_tags.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+
+}
+
+.tags_size {
+
+    -fx-font-size: 7px;
+    -fx-font-family: "Teenidle";
+
+}
+
+.custom_tag {
+
+    -fx-background-image: url("../image/show/icon/icon_custom_tags.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+
+}
