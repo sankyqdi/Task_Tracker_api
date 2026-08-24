@@ -6,24 +6,17 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import lombok.RequiredArgsConstructor;
+import javafx.scene.layout.Region;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Component
 @Scope("prototype")
-@RequiredArgsConstructor
 public class TagItemController {
 
     private final String pathTags = "/view/blanks/tags/default_icon_tag.fxml";
     private final String pathCustomTags = "/view/blanks/tags/custom_icon_tag.fxml";
-
-    @FXML
-    private AnchorPane itemTag;
 
     @FXML
     private Label stringTag;
@@ -34,37 +27,97 @@ public class TagItemController {
 
     }
 
-    public List<Node> setItemTags(Set<TaskTag> tags) {
-
-        List<Node> nodes = new ArrayList<>();
-
-        for (TaskTag tag : tags) {
+    public Node setItemTags(TaskTag tag) {
 
             Node node = LoadFXML.loadFxmlBlank(pathTags, this);
+
             setTextTag(tag.getFormattedTag());
 
-            nodes.add(node);
-
-        }
-
-        return nodes;
+        return node;
 
     }
 
-    public List<Node> setItemCustomTags(Set<String> tags) {
+    public Node setItemTags(TaskTag tag, double width, double height) {
 
-        List<Node> nodes = new ArrayList<>();
+        Node node = LoadFXML.loadFxmlBlank(pathTags, this);
 
-        for (String tag : tags) {
+        if (node instanceof javafx.scene.layout.Region region) {
 
-            Node node = LoadFXML.loadFxmlBlank(pathCustomTags, this);
-            setTextTag(tag);
-
-            nodes.add(node);
+            region.setPrefWidth(width);
+            region.setPrefHeight(height);
 
         }
 
-        return nodes;
+        stringTag.setText(tag.getFormattedTag());
+
+        return node;
 
     }
+
+    public Node setItemTags(TaskTag tag, double width, double height, String id) {
+
+        Node node = LoadFXML.loadFxmlBlank(pathTags, this);
+
+        if (node instanceof javafx.scene.layout.Region region) {
+
+            region.setPrefWidth(width);
+            region.setPrefHeight(height);
+
+        }
+        node.setId(id);
+
+        stringTag.setText(tag.getFormattedTag());
+
+        return node;
+
+    }
+
+    public Node setItemCustomTags(String tag) {
+
+        Node node = LoadFXML.loadFxmlBlank(pathCustomTags, this);
+
+        setTextTag(tag);
+
+
+        return node;
+
+    }
+
+    public Node setItemCustomTags(String tag, double width, double height) {
+
+        Node node = LoadFXML.loadFxmlBlank(pathCustomTags, this);
+
+
+        if (node instanceof javafx.scene.layout.Region region) {
+
+            region.setPrefWidth(width);
+            region.setPrefHeight(height);
+
+        }
+
+        setTextTag(tag);
+
+        return node;
+
+    }
+
+    public Node setItemCustomTags(String tag, double width, double height, String id) {
+
+        Node node = LoadFXML.loadFxmlBlank(pathCustomTags, this);
+
+        if (node instanceof javafx.scene.layout.Region region) {
+
+            region.setPrefWidth(width);
+            region.setPrefHeight(height);
+
+        }
+
+        node.setId(id);
+
+        setTextTag(tag);
+
+        return node;
+
+    }
+
 }

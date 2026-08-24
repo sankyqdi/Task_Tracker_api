@@ -45,10 +45,23 @@ public enum TaskTag {
     }
 
     public static TaskTag fromString(String tagName) {
-        try {
-            return TaskTag.valueOf(tagName.toUpperCase());
-        } catch (IllegalArgumentException e) {
+
+        if (tagName == null || tagName.isBlank()) {
+
             return null;
+
+        }
+
+        String cleanName = tagName.replaceAll("[^a-zA-Z]", "").trim().toUpperCase();
+
+        try {
+
+            return TaskTag.valueOf(cleanName);
+
+        } catch (IllegalArgumentException e) {
+
+            return null;
+
         }
     }
 }

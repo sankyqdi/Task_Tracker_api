@@ -27,12 +27,18 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
             ConfigurableApplicationContext context = event.getApplicationContext();
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main_menu.fxml"));
+
+            //Test animation
+//          FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/blanks/pop_up_window/updateTask.fxml"));
+
             loader.setControllerFactory(context::getBean);
 
             Parent root = loader.load();
 
+            Scene scene = new Scene(root, windowManager.getWidth(), windowManager.getHeight());
 
-            Scene scene = new Scene(root, 800, 600);
+            //Test animation
+//            Scene scene = new Scene(root, 480, 392);
             stage.setTitle("Task Tracker");
             stage.setScene(scene);
 //      stage.setMinWidth(600);
@@ -43,7 +49,7 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
 
         } catch (IOException e) {
 
-            throw new RuntimeException("Ошибка загрузки /view/main_menu.fxml", e);
+            throw new RuntimeException("Ошибка загрузки /view/blanks/pop_up_window/updateTask.fxml", e);
 
         }
     }

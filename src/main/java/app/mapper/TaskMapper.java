@@ -13,6 +13,8 @@ import org.mapstruct.*;
         )
 public interface TaskMapper {
 
+    @Mapping(source = "builtInTags", target = "builtInTag")
+    @Mapping(source = "customTags", target = "customTag")
     TaskDTO map(Task task);
 
     @Mapping(target = "builtInTags", ignore = true)

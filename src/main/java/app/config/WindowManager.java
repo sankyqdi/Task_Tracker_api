@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lombok.Getter;
 import lombok.Setter;
 
 import org.springframework.context.ApplicationContext;
@@ -18,6 +19,12 @@ public class WindowManager {
     private ApplicationContext context;
     @Setter
     private Stage primaryStage;
+
+    @Getter
+    private int width = 1200;
+
+    @Getter
+    private int height = 800;
 
     public WindowManager(ApplicationContext context) {
 
@@ -52,6 +59,7 @@ public class WindowManager {
         }
     }
 
+
     public void openModalWindow(View view, boolean isResizable) {
 
         try {
@@ -79,6 +87,19 @@ public class WindowManager {
             e.printStackTrace();
 
         }
+    }
+
+    public void setSizeScene(int width, int height) {
+
+        if (width < 100 || height < 100) {
+
+            return;
+
+        }
+
+        this.width = width;
+        this.height = height;
+
     }
 
 

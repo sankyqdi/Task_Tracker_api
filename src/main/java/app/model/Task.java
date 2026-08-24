@@ -40,6 +40,7 @@ public class Task {
     private byte importanceLevel;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private Stage stage = Stage.CREATED;
 
     @Column(name = "created_at", updatable = false)
@@ -56,7 +57,7 @@ public class Task {
     @Column(name = "is_completed")
     private boolean isCompleted = false;
 
-    @ElementCollection(targetClass = TaskTag.class, fetch = FetchType.LAZY)
+    @ElementCollection(targetClass = TaskTag.class, fetch = FetchType.EAGER)
     @CollectionTable(
             name = "task_built_in_tags",
             joinColumns = @JoinColumn(name = "task_id")
@@ -66,7 +67,7 @@ public class Task {
     @Column(name = "tag_name")
     private Set<TaskTag> builtInTags = new HashSet<>();
 
-    @ElementCollection(targetClass = String.class, fetch = FetchType.LAZY)
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     @CollectionTable(
             name = "task_custom_tags",
             joinColumns = @JoinColumn(name = "task_id")

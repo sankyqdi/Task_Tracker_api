@@ -7,8 +7,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="itemTag" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="19.0" prefWidth="69.0" styleClass="tags_item" stylesheets="@../../../css/show_panel.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app/controller/TagItemController.java">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="19.0" prefWidth="69.0" styleClass="tags_item" stylesheets="@../../../css/show_panel.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="stringTag" alignment="CENTER" layoutX="29.0" layoutY="1.0" prefHeight="17.0" prefWidth="35.0" styleClass="tags_size">
          <font>

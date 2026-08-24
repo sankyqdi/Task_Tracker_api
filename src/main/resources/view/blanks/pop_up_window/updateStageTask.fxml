@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.modal_window.UpdateStageController">
+   <children>
+      <Button layoutX="93.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleComplatedStage" prefHeight="47.0" prefWidth="215.0" text="COMPLETED" />
+      <Button layoutX="93.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleProgressStage" prefHeight="47.0" prefWidth="215.0" text="IN_PROGRESS" />
+      <Button layoutX="93.0" layoutY="126.0" mnemonicParsing="false" onAction="#handleAbandonedStage" prefHeight="47.0" prefWidth="215.0" text="ABANDONED" />
+      <Button layoutX="328.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleDefaultStage" prefHeight="33.0" prefWidth="72.0" text="DAFAULT" />
+      <Button layoutX="146.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="39.0" prefWidth="109.0" text="SAVE" />
+   </children>
+</AnchorPane>

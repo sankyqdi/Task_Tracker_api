@@ -13,9 +13,10 @@
 .show-list-background {
 
     -fx-background-image: url("../image/show/list_background.png");
-    -fx-background-size: cover;
-    -fx-background-position: center-right;
+    -fx-background-size: contain;
+    -fx-background-position: center-right center;
     -fx-background-repeat: no-repeat;
+
 }
 
 .show-list-background .list-cell {

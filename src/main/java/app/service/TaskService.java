@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -112,22 +113,21 @@ public class TaskService implements TaskServiceInterface {
     }
 
     public void enrichTaskTags(Task task, Set<String> tags) {
-
         if (tags != null) {
+            Set<TaskTag> builtIn = new HashSet<>();
+            Set<String> custom = new HashSet<>();
 
-            Set<TaskTag> tagSet = tags.stream()
-                    .map(TaskTag::fromString)
-                    .filter(java.util.Objects::nonNull)
-                    .collect(Collectors.toSet());
+            for (String rawTag : tags) {
+                TaskTag parsedTag = TaskTag.fromString(rawTag);
+                if (parsedTag != null) {
+                    builtIn.add(parsedTag);
+                } else {
+                    custom.add(rawTag);
+                }
+            }
 
-            task.setBuiltInTags(tagSet);
-
-            Set<String> customTah = tags.stream()
-                    .filter(tag -> TaskTag.fromString(tag) == null)
-                    .collect(Collectors.toSet());
-
-            task.setCustomTags(customTah);
-
+            task.setBuiltInTags(builtIn);
+            task.setCustomTags(custom);
         }
     }
 
