@@ -62,7 +62,7 @@ Client UI: JavaFX
 
 1. **Клонируйте репозиторий:**
    
-<img width="1000" height="370" alt="carbon(3)" src="https://github.com/user-attachments/assets/9da665db-a543-47a9-9ca3-362922a9e183" />
+<img width="720" height="250" alt="carbon(3)" src="https://github.com/user-attachments/assets/9da665db-a543-47a9-9ca3-362922a9e183" />
 
    
 3. Создайте базу данных (через psql или через IDE:
