@@ -74,9 +74,9 @@ Client UI: JavaFX
 
 4. Запуск 
   Windows (CMD / PowerShell):
-    <img width="200" height="410" alt="carbon(1)" src="https://github.com/user-attachments/assets/341c7d99-0395-4370-baad-4a06b94164b1" />
+    <img width="200" height="150" alt="carbon(1)" src="https://github.com/user-attachments/assets/341c7d99-0395-4370-baad-4a06b94164b1" />
   Linux / macOS:
-     <img width="200" height="410" alt="carbon(2)" src="https://github.com/user-attachments/assets/ca645ba3-196c-4ce3-8062-9e136c71d483" />
+     <img width="200" height="150" alt="carbon(2)" src="https://github.com/user-attachments/assets/ca645ba3-196c-4ce3-8062-9e136c71d483" />
 
 
     
