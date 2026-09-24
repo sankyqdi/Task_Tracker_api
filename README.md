@@ -70,13 +70,17 @@ Client UI: JavaFX
 
 3. Настройте подключение:
   Проверьте и укажите ваши параметры подключения в src/main/resources/application.yml:
-  <img width="1262" height="558" alt="carbon" src="https://github.com/user-attachments/assets/9c36842e-e1ee-4b16-af82-0aedc6aec87d" />
+  <img width="300" height="190" alt="carbon" src="https://github.com/user-attachments/assets/9c36842e-e1ee-4b16-af82-0aedc6aec87d" />
 
 4. Запуск 
   Windows (CMD / PowerShell):
+
     <img width="200" height="150" alt="carbon(1)" src="https://github.com/user-attachments/assets/341c7d99-0395-4370-baad-4a06b94164b1" />
+    
   Linux / macOS:
+
      <img width="200" height="150" alt="carbon(2)" src="https://github.com/user-attachments/assets/ca645ba3-196c-4ce3-8062-9e136c71d483" />
+     
 
 
     
