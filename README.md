@@ -62,8 +62,8 @@ Client UI: JavaFX
 
 1. **Клонируйте репозиторий:**
    ```bash
-   git clone [https://github.com/sankyqdi/Task_Tracker_api.git](https://github.com/sankyqdi/Task_Tracker_api.git)
-   cd Task_Tracker_api
+<img width="2048" height="520" alt="carbon(3)" src="https://github.com/user-attachments/assets/9da665db-a543-47a9-9ca3-362922a9e183" />
+
    
 2. Создайте базу данных (через psql или через IDE:
   psql -U postgres -c "CREATE DATABASE task_tracker_db;"
