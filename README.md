@@ -72,10 +72,11 @@ Client UI: JavaFX
   Проверьте и укажите ваши параметры подключения в src/main/resources/application.yml:
   <img width="400" height="190" alt="carbon" src="https://github.com/user-attachments/assets/9c36842e-e1ee-4b16-af82-0aedc6aec87d" />
 
-4. Запуск 
+4. Запуск
+   
   Windows (CMD / PowerShell):
 
-    <img width="200" height="150" alt="carbon(1)" src="https://github.com/user-attachments/assets/341c7d99-0395-4370-baad-4a06b94164b1" />
+   <img width="200" height="150" alt="carbon(1)" src="https://github.com/user-attachments/assets/341c7d99-0395-4370-baad-4a06b94164b1" />
     
   Linux / macOS:
 
