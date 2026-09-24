@@ -49,3 +49,33 @@ Client UI: JavaFX
 [ ] Контейнеризация проекта с помощью Docker Compose
 
 [ ] Настройка CI/CD для автоматического тестирования и сборки
+
+## 🚀 Инструкция по запуску
+
+### Предварительные требования
+Убедитесь, что у вас установлены:
+* **Java SDK 21**
+* **PostgreSQL** (версии 14 и выше)
+* **Git**
+
+### Шаги для локального запуска
+
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone [https://github.com/sankyqdi/Task_Tracker_api.git](https://github.com/sankyqdi/Task_Tracker_api.git)
+   cd Task_Tracker_api
+   
+2. Создайте базу данных (через psql или через IDE:
+  psql -U postgres -c "CREATE DATABASE task_tracker_db;"
+
+3. Настройте подключение:
+  Проверьте и укажите ваши параметры подключения в src/main/resources/application.yml:
+  <img width="1262" height="558" alt="carbon" src="https://github.com/user-attachments/assets/9c36842e-e1ee-4b16-af82-0aedc6aec87d" />
+
+4. Запуск 
+  Windows (CMD / PowerShell):
+    
+
+    
+  
+
