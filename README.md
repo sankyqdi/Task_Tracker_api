@@ -61,18 +61,18 @@ Client UI: JavaFX
 ### Шаги для локального запуска
 
 1. **Клонируйте репозиторий:**
-   ```bash
-<img width="2048" height="520" alt="carbon(3)" src="https://github.com/user-attachments/assets/9da665db-a543-47a9-9ca3-362922a9e183" />
+   
+<img width="1000" height="520" alt="carbon(3)" src="https://github.com/user-attachments/assets/9da665db-a543-47a9-9ca3-362922a9e183" />
 
    
-2. Создайте базу данных (через psql или через IDE:
+3. Создайте базу данных (через psql или через IDE:
   psql -U postgres -c "CREATE DATABASE task_tracker_db;"
 
-3. Настройте подключение:
+4. Настройте подключение:
   Проверьте и укажите ваши параметры подключения в src/main/resources/application.yml:
   <img width="400" height="190" alt="carbon" src="https://github.com/user-attachments/assets/9c36842e-e1ee-4b16-af82-0aedc6aec87d" />
 
-4. Запуск
+5. Запуск
    
   Windows (CMD / PowerShell):
 
