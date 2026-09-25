@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.dto.TaskCreatedDTO;
+import app.dto.TaskCreateDTO;
 import app.dto.TaskDTO;
 import app.dto.TaskParamsDTO;
 import app.dto.TaskUpdateDTO;
@@ -42,7 +42,7 @@ public class TaskController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public TaskDTO create(@Valid @RequestBody TaskCreatedDTO dto) {
+    public TaskDTO create(@Valid @RequestBody TaskCreateDTO dto) {
 
         return taskService.create(dto);
 

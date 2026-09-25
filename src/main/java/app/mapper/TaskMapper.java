@@ -1,6 +1,6 @@
 package app.mapper;
 
-import app.dto.TaskCreatedDTO;
+import app.dto.TaskCreateDTO;
 import app.dto.TaskDTO;
 import app.dto.TaskUpdateDTO;
 import app.model.Task;
@@ -19,7 +19,7 @@ public interface TaskMapper {
 
     @Mapping(target = "builtInTags", ignore = true)
     @Mapping(target = "customTags", ignore = true)
-    Task map(TaskCreatedDTO taskCreatedDTO);
+    Task map(TaskCreateDTO taskCreateDTO);
 
     @Mapping(target = "builtInTags", ignore = true)
     @Mapping(target = "customTags", ignore = true)

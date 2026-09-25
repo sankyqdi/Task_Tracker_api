@@ -1,17 +1,15 @@
 package app.service;
 
-import app.dto.TaskCreatedDTO;
+import app.dto.TaskCreateDTO;
 import app.dto.TaskDTO;
 import app.dto.TaskParamsDTO;
 import app.dto.TaskUpdateDTO;
 import app.mapper.TaskMapper;
-import app.model.Stage;
 import app.model.Task;
 import app.model.TaskTag;
 import app.repository.TaskRepository;
 import app.specification.TaskSpecification;
 import lombok.AllArgsConstructor;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -20,11 +18,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -55,10 +50,10 @@ public class TaskService implements TaskServiceInterface {
     }
 
     @Transactional
-    public TaskDTO create(TaskCreatedDTO taskCreatedDTO) {
+    public TaskDTO create(TaskCreateDTO taskCreateDTO) {
 
-        Task task = taskMapper.map(taskCreatedDTO);
-        enrichTaskTags(task, taskCreatedDTO.getTags());
+        Task task = taskMapper.map(taskCreateDTO);
+        enrichTaskTags(task, taskCreateDTO.getTags());
 
         taskRepository.save(task);
 

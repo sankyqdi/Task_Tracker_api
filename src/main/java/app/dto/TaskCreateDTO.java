@@ -4,6 +4,7 @@ package app.dto;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -12,7 +13,8 @@ import java.util.Set;
 @Getter
 @Setter
 @AllArgsConstructor
-public class TaskCreatedDTO {
+@NoArgsConstructor
+public class TaskCreateDTO {
 
         @NotBlank
         @Size(max = 50)

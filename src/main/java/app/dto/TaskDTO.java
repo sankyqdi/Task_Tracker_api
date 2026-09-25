@@ -2,7 +2,9 @@ package app.dto;
 
 import app.model.Stage;
 import app.model.TaskTag;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.dialect.function.array.AbstractArrayTrimFunction;
 
@@ -13,6 +15,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class TaskDTO {
 
     private Long id;
@@ -44,16 +47,14 @@ public class TaskDTO {
 
     }
 
+    @JsonIgnore
     public List<String> getCustomTags() {
-
-        return new ArrayList<>(customTag);
-
+        return customTag == null ? new ArrayList<>() : new ArrayList<>(customTag);
     }
 
+    @JsonIgnore
     public List<TaskTag> getBuiltInTags() {
-
-        return new ArrayList<>(builtInTag);
-
+        return builtInTag == null ? new ArrayList<>() : new ArrayList<>(builtInTag);
     }
 
 }

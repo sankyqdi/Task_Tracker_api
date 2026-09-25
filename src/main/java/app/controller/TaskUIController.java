@@ -1,8 +1,6 @@
 package app.controller;
 
-import app.config.View;
-import app.config.WindowManager;
-import app.dto.TaskCreatedDTO;
+import app.dto.TaskCreateDTO;
 import app.model.TaskTag;
 import app.service.TaskService;
 import javafx.fxml.FXML;
@@ -47,7 +45,7 @@ public class TaskUIController {
 
         if (!taskName.trim().isEmpty()) {
 
-            taskService.create(new TaskCreatedDTO(taskName, taskBody, taskLevel, taskDueDate, selectedTag));
+            taskService.create(new TaskCreateDTO(taskName, taskBody, taskLevel, taskDueDate, selectedTag));
             nameInput.clear();
 
         }
