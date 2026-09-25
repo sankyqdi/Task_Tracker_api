@@ -49,3 +49,41 @@ Client UI: JavaFX
 [ ] Контейнеризация проекта с помощью Docker Compose
 
 [ ] Настройка CI/CD для автоматического тестирования и сборки
+
+## 🚀 Инструкция по запуску
+
+### Предварительные требования
+Убедитесь, что у вас установлены:
+* **Java SDK 21**
+* **PostgreSQL** (версии 14 и выше)
+* **Git**
+
+### Шаги для локального запуска
+
+1. **Клонируйте репозиторий:**
+   
+<img width="720" height="250" alt="carbon(3)" src="https://github.com/user-attachments/assets/9da665db-a543-47a9-9ca3-362922a9e183" />
+
+   
+3. Создайте базу данных (через psql или через IDE:
+  psql -U postgres -c "CREATE DATABASE task_tracker_db;"
+
+4. Настройте подключение:
+  Проверьте и укажите ваши параметры подключения в src/main/resources/application.yml:
+  <img width="400" height="190" alt="carbon" src="https://github.com/user-attachments/assets/9c36842e-e1ee-4b16-af82-0aedc6aec87d" />
+
+5. Запуск
+   
+  Windows (CMD / PowerShell):
+
+   <img width="200" height="150" alt="carbon(1)" src="https://github.com/user-attachments/assets/341c7d99-0395-4370-baad-4a06b94164b1" />
+    
+  Linux / macOS:
+
+   <img width="200" height="150" alt="carbon(2)" src="https://github.com/user-attachments/assets/ca645ba3-196c-4ce3-8062-9e136c71d483" />
+     
+
+
+    
+  
+
